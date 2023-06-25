@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock title %}
+{% block content %}
+
+<div class="container-xl">
+    <h1 class="mt-5 text-end"> اضافة مقالة </h1>
+    <form method="POST" class="text-end">
+        <div class="mb-3">
+          <label for="" class="form-label  "> العنوان </label>
+          <input type="text" class="form-control text-end" name="title"  placeholder=" العنوان " required>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label"> نوع المقالة </label>
+            <select class="form-select form-select-lg text-end " name="type"  required>
+                <option selected> الرجاء الاختيار </option>
+                <option value=""> خبر </option>
+                <option value=""> مراجعة </option>
+                <option value=""> مقالة </option>
+            </select>
+
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}
