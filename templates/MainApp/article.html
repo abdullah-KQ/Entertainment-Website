@@ -5,12 +5,12 @@
 <div class="container-xl">
     <h1 class="mt-5 text-end"> اضافة مقالة </h1>
     <form method="POST" class="text-end">
-        <div class="mb-3">
-          <label for="" class="form-label  "> العنوان </label>
+        <div class="mt-5">
+          <label for="" class="form-label"> العنوان </label>
           <input type="text" class="form-control text-end" name="title"  placeholder=" العنوان " required>
         </div>
-        <div class="mb-3">
-            <label for="" class="form-label"> نوع المقالة </label>
+        <div class="mb-5">
+            <label for="" class="form-label mt-5"> نوع المقالة </label>
             <select class="form-select form-select-lg text-end " name="type"  required>
                 <option selected> الرجاء الاختيار </option>
                 <option value=""> خبر </option>
@@ -18,7 +18,7 @@
                 <option value=""> مقالة </option>
             </select>
         </div>
-        <div id="editor" class="mt-4" style="height:50px"></div>
+        <div id="editor" class="mt-5" style="height:50px"></div>
         <script>
             ClassicEditor
                 .create( document.querySelector( '#editor' ) )
@@ -26,6 +26,9 @@
                     console.error( error );
                 } );
         </script>
+
+
+        <button type="submit" class="btn btn-primary mt-5"> نشر المقالة </button>
     </form>
 </div>
 
