@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}{% endblock title %}
+{% block title %}add article{% endblock title %}
 {% block content %}
 
 <div class="container-xl">
@@ -17,8 +17,15 @@
                 <option value=""> مراجعة </option>
                 <option value=""> مقالة </option>
             </select>
-
         </div>
+        <div id="editor" class="mt-4" style="height:50px"></div>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
     </form>
 </div>
 
