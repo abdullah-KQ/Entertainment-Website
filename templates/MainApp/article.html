@@ -1,33 +1,24 @@
 {% extends 'base.html' %}
 {% block title %}add article{% endblock title %}
 {% block content %}
+{% load static %}
 
 <div class="container-xl">
     <h1 class="mt-5 text-end"> اضافة مقالة </h1>
     <form method="POST" class="text-end">
         <div class="mt-5">
-          <label for="" class="form-label"> العنوان </label>
-          <input type="text" class="form-control text-end" name="title"  placeholder=" العنوان " required>
+          {% csrf_token %}
+          <label for={{form.title.id_for_label}} class="form-label"> العنوان </label>
+          {{form.title}}
         </div>
         <div class="mb-5">
             <label for="" class="form-label mt-5"> نوع المقالة </label>
-            <select class="form-select form-select-lg text-end " name="type"  required>
-                <option selected> الرجاء الاختيار </option>
-                <option value=""> خبر </option>
-                <option value=""> مراجعة </option>
-                <option value=""> مقالة </option>
-            </select>
+            {{form.article_type}}
         </div>
-        <div id="editor" class="mt-5" style="height:50px"></div>
-        <script>
-            ClassicEditor
-                .create( document.querySelector( '#editor' ) )
-                .catch( error => {
-                    console.error( error );
-                } );
-        </script>
-
-
+        <div class="mb-5">
+            {{ form.media }}
+            {{form.body}}
+        </div>
         <button type="submit" class="btn btn-primary mt-5"> نشر المقالة </button>
     </form>
 </div>
