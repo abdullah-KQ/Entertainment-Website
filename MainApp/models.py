@@ -11,4 +11,4 @@ class Article(models.Model):
     body = RichTextField(blank=True, null=True)
 
     def __str__(self):
-        return self.titale + ' | ' + str(self.author)
+        return self.title + ' | ' + str(self.author)

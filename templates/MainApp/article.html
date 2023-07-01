@@ -6,8 +6,8 @@
 <div class="container-xl">
     <h1 class="mt-5 text-end"> اضافة مقالة </h1>
     <form method="POST" class="text-end">
+        {% csrf_token %}
         <div class="mt-5">
-          {% csrf_token %}
           <label for={{form.title.id_for_label}} class="form-label"> العنوان </label>
           {{form.title}}
         </div>
